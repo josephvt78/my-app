@@ -1,0 +1,5 @@
+<tr>
+    <td [style.backgroundColor]="(detail.isCool ? 'red' : '')">{{ detail.id }}</td>
+    <td>{{ detail.name }}</td>
+    <button (click)="onRemove()">Remove Pokemon</button>
+</tr>
