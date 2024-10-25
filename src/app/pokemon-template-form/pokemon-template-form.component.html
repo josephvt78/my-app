@@ -5,6 +5,7 @@
         <input type="radio"
                 name="isCool"
                 [value]="true"
+                #pokemonName="ngModel"
                 [ngModel]="pokemon.isCool"
                 (ngModelChange)="toggleIsCool($event)"
                 /> Pokemon is cool?
@@ -24,4 +25,5 @@
 <div>
     MODEL: {{ pokemon | json }}
     FORM: {{ form.value | json }}
+    ERROR: <div *ngIf="!pokemonName.pristine">NOT PRISTINE ANYMORE... It is DIRTY!</div>
 </div>
