@@ -334,4 +334,11 @@
 
 
 <router-outlet />
-<app-pokemon-template-form></app-pokemon-template-form>
+<div>
+  <a 
+    *ngFor="let item of nav"
+    [routerLink]="item.link"  
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: item.exact}"
+  > {{ item.name }}</a>
+</div>
