@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { Pokemon, PokemonType } from '../models/pokemon';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-template-form',
@@ -8,7 +9,6 @@ import { Pokemon, PokemonType } from '../models/pokemon';
   styleUrl: './pokemon-template-form.component.css'
 })
 export class PokemonTemplateFormComponent implements OnInit{
-
 
   pokemon!: Pokemon;
   pokemonType: PokemonType[] = [
@@ -29,6 +29,10 @@ export class PokemonTemplateFormComponent implements OnInit{
   toggleIsCool(object: any) {
     console.log(object);
     this.pokemon.isCool = !this.pokemon.isCool;
+  }
+
+  handleSubmit(object: any) {
+    console.log(object);
   }
 
   ngOnInit(): void {
