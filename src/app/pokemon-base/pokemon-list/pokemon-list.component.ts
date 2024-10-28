@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { Pokemon } from '../../models/pokemon';
 import { PokemonService } from '../../services/pokemon.service';
 @Component({
@@ -6,11 +6,14 @@ import { PokemonService } from '../../services/pokemon.service';
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
-export class PokemonListComponent implements OnInit{
+export class PokemonListComponent implements OnInit, AfterViewInit{
   pokemons!: Pokemon[];
-
+  @ViewChildren('pokemonRef') pokemonRef!: ElementRef;
   constructor(private pokemonService: PokemonService) {
     
+  }
+  ngAfterViewInit(): void {
+    console.log(this.pokemonRef);
   }
 
   handleRemove(event: Pokemon) {

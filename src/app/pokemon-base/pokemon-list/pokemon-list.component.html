@@ -4,7 +4,9 @@
            <th>Name</th>
         </thead>
         <tbody>
-            <app-pokemon-detail *ngFor="let pokemon of pokemons" [detail]="pokemon" (remove)="handleRemove($event)">
+            <app-pokemon-detail 
+            #pokemonRef
+            *ngFor="let pokemon of pokemons" [detail]="pokemon" (remove)="handleRemove($event)">
                     <h1>----------</h1>
             </app-pokemon-detail>
         </tbody>
