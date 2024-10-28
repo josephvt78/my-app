@@ -1,5 +1,6 @@
 <tr>
     <td [style.backgroundColor]="(detail.isCool ? 'red' : '')">{{ detail.id }}</td>
     <td>{{ detail.name }}</td>
+    <button [routerLink]="['/pokemon', detail.id]">Details</button>
     <button (click)="onRemove()">Remove Pokemon</button>
 </tr>
